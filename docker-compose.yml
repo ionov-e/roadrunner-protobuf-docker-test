@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  rr:
+    build:
+      dockerfile: .docker/roadrunner/Dockerfile
+    ports:
+      - '5000:8000'
+    user: '${UID:-1000}:${GID:-1000}'
+    volumes:
+      - ./:/app
+    working_dir: /app
